@@ -3,7 +3,7 @@ from turtle import Turtle
 ALIGN = "right"
 COLOUR = "white"
 FONT = ("Courier", 16, "bold")
-LEVEL_1_SPEED = 5
+LEVEL_1_CAR_SPEED = 5
 SPEED_INCREMENT = 5
 
 class Scorekeeper(Turtle):
@@ -14,7 +14,7 @@ class Scorekeeper(Turtle):
         self.penup()
         self.setpos(-180, 275)
         self.level = 0
-        self.level_speed = LEVEL_1_SPEED
+        self.level_speed = LEVEL_1_CAR_SPEED
         self.display_current_level()
 
     def display_current_level(self):

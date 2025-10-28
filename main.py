@@ -1,3 +1,4 @@
+from car import Car
 from frog import Frog
 from turtle import Screen
 
@@ -11,14 +12,8 @@ road.tracer(0)
 # TODO: stretch - paint lines on road
 
 frog = Frog(road)
-road.update()
 road.onkeypress(frog.move, "Up")
 
-game_is_on = True
+car = Car(road)
 
 road.exitonclick()
-
-# TODO: Create Car class
-    # cars are randomly generated along y-axis and move from right edge to left edge of screen
-    # randomise car colour
-    # if car collides with turtle, game is over and everything stops

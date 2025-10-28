@@ -5,6 +5,7 @@ from turtle import Turtle
 COLOURS = ["floral white", "gray", "silver", "royal blue", "firebrick"]
 SHAPE = "square"
 
+#TODO: stretch - convert to "Traffic" class, i.e. a list of cars and their behaviour
 class Car(Turtle):
     def __init__(self, road):
         super().__init__()
@@ -28,4 +29,3 @@ class Car(Turtle):
     def move(self, speed):
         """moves the car across the screen right to left at a given speed"""
         self.fd(speed)
-        self.road.update()

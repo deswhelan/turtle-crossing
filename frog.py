@@ -1,17 +1,18 @@
 import time
+from car import Car
 from turtle import Turtle
 
 COLOUR = "lawn green"
 SHAPE = "turtle"
-LEVEL_1_SPEED = 10
+LEVEL_1_SPEED = 5
 SPEED_INCREMENT = 2
 
 class Frog(Turtle):
     def __init__(self, road, scorekeeper):
         super().__init__()
         self.road = road
-        self.speed = LEVEL_1_SPEED
         self.scorekeeper = scorekeeper
+        self.speed = LEVEL_1_SPEED
         self.starting_position = (0, -(self.road.window_height() / 2) + 20)
         self.finishing_position = (0, self.road.window_height() / 2)
         self.shape(SHAPE)
@@ -23,13 +24,13 @@ class Frog(Turtle):
     def move(self):
         """Moves frog forward"""
         self.fd(self.speed)
-        self.road.update()
 
         # level up and "reset" frog position once road is crossed
         if self.distance(self.finishing_position) <= 15:
             self.scorekeeper.level_up()
             self.start_new_crossing()
             self.speed += SPEED_INCREMENT
+            cars = [Car(self.road) for i in range(30)]
 
     def start_new_crossing(self):
         """Returns frog to starting position"""

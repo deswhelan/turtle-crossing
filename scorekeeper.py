@@ -3,8 +3,8 @@ from turtle import Turtle
 ALIGN = "center"
 COLOUR = "white"
 FONT = ("Courier", 16, "bold")
-LEVEL_1_CAR_SPEED = 5
-SPEED_INCREMENT = 5
+LEVEL_1_CAR_SPEED = 2
+SPEED_INCREMENT = 2
 
 class Scorekeeper(Turtle):
     def __init__(self):

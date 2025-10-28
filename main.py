@@ -1,5 +1,6 @@
 from car import Car
 from frog import Frog
+from scorekeeper import Scorekeeper
 from turtle import Screen
 
 STARTING_CAR_SPEED = 1
@@ -13,16 +14,16 @@ road.listen()
 road.tracer(0)
 # TODO: stretch - paint lines on road
 
-frog = Frog(road)
+scorekeeper = Scorekeeper()
+frog = Frog(road, scorekeeper)
 road.onkeypress(frog.move, "Up")
 
 game_is_on = True
+# TODO: cars are randomly generated along y-axis and move from right edge to left edge of screen
 cars = [Car(road) for i in range(10)]
 car_speed = STARTING_CAR_SPEED
 
 while game_is_on:
-
-    # TODO: cars are randomly generated along y-axis and move from right edge to left edge of screen
     cars[0].move(car_speed)
 
     for idx, car in enumerate(cars):

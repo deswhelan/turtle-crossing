@@ -1,6 +1,14 @@
 # TODO: Configure screen
-    # must be 600 X 600
     # turn off tracer and use update to refresh every 0.1s
+    # stretch - paint lines on road
+from turtle import Screen
+
+road = Screen()
+road.bgcolor("black")
+road.setup(600, 600)
+road.tracer(0)
+
+road.exitonclick()
 
 # TODO: Create Turtle class
     # move forward when Up key is pressed

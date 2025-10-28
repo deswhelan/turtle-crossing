@@ -26,17 +26,18 @@ while game_is_on:
     time.sleep(0.01)
     road.update()
 
-    random_chance = random.randint(1, 3)
+    # continuously generate new cars at random intervals
+    random_chance = random.randint(1, 4)
     if random_chance == 1:
         cars.append(Car(road))
 
+    # move the cars across the screen until one of them hits the frog
     cars[0].move(scorekeeper.level_speed)
-
     for idx, car in enumerate(cars):
         # TODO: stretch - refine criteria for car "touching" frog
-        if car.distance(frog) <= 10:
+        if car.distance(frog) <= 20:
             game_is_on = False
-            scorekeeper.game_over()
+            scorekeeper.handle_game_over()
         if idx == 0:
             pass
         else:

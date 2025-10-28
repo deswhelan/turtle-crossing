@@ -30,7 +30,6 @@ class Frog(Turtle):
             self.scorekeeper.level_up()
             self.start_new_crossing()
             self.speed += SPEED_INCREMENT
-            cars = [Car(self.road) for i in range(30)]
 
     def start_new_crossing(self):
         """Returns frog to starting position"""
@@ -46,4 +45,3 @@ class Frog(Turtle):
                 self.color(COLOUR)
             self.road.update()
             time.sleep(0.05)
-

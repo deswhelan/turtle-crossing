@@ -26,7 +26,7 @@ class Scorekeeper(Turtle):
         self.level_speed += SPEED_INCREMENT
         self.display_current_level()
 
-    def game_over(self):
+    def handle_game_over(self):
         self.clear()
         self.home()
         self.write(f"GAME OVER! You reached level {self.level}", align=ALIGN, font=FONT)

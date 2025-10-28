@@ -17,7 +17,7 @@ scorekeeper = Scorekeeper()
 frog = Frog(road, scorekeeper)
 road.onkeypress(frog.move, "Up")
 
-# TODO: cars are randomly generated along y-axis and move from right edge to left edge of screen
+# TODO: continuously regenerate random cars
 cars = [Car(road) for i in range(30)]
 
 game_is_on = True
@@ -26,6 +26,11 @@ while game_is_on:
     cars[0].move(scorekeeper.level_speed)
 
     for idx, car in enumerate(cars):
+        # TODO: stretch - refine criteria for car "touching" frog
+        if car.distance(frog) <= 10:
+            game_is_on = False
+            scorekeeper.game_over()
+
         if idx == 0:
             pass
         else:

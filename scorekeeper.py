@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-ALIGN = "right"
+ALIGN = "center"
 COLOUR = "white"
 FONT = ("Courier", 16, "bold")
 LEVEL_1_CAR_SPEED = 5
@@ -12,8 +12,8 @@ class Scorekeeper(Turtle):
         self.color(COLOUR)
         self.hideturtle()
         self.penup()
-        self.setpos(-180, 275)
-        self.level = 0
+        self.setpos(-240, 275)
+        self.level = 1
         self.level_speed = LEVEL_1_CAR_SPEED
         self.display_current_level()
 
@@ -25,3 +25,8 @@ class Scorekeeper(Turtle):
         self.level += 1
         self.level_speed += SPEED_INCREMENT
         self.display_current_level()
+
+    def game_over(self):
+        self.clear()
+        self.home()
+        self.write(f"GAME OVER! You reached level {self.level}", align=ALIGN, font=FONT)

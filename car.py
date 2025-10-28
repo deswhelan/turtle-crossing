@@ -5,8 +5,6 @@ from turtle import Turtle
 COLOURS = ["floral white", "gray", "silver", "royal blue", "firebrick"]
 SHAPE = "square"
 
-# TODO:  if car collides with turtle, game is over and everything stops
-
 class Car(Turtle):
     def __init__(self, road):
         super().__init__()

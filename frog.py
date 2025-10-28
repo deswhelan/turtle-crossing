@@ -22,7 +22,7 @@ class Frog(Turtle):
         """Moves frog forward"""
         self.fd(SPEED)
         self.road.update()
-        
+
         # level up and "reset" frog position once road is crossed
         if self.distance(self.finishing_position) <= 15:
             self.scorekeeper.level_up()

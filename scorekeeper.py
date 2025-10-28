@@ -3,6 +3,8 @@ from turtle import Turtle
 ALIGN = "right"
 COLOUR = "white"
 FONT = ("Courier", 16, "bold")
+LEVEL_1_SPEED = 5
+SPEED_INCREMENT = 5
 
 class Scorekeeper(Turtle):
     def __init__(self):
@@ -12,6 +14,7 @@ class Scorekeeper(Turtle):
         self.penup()
         self.setpos(-180, 275)
         self.level = 0
+        self.level_speed = LEVEL_1_SPEED
         self.display_current_level()
 
     def display_current_level(self):
@@ -20,4 +23,5 @@ class Scorekeeper(Turtle):
 
     def level_up(self):
         self.level += 1
+        self.level_speed += SPEED_INCREMENT
         self.display_current_level()
